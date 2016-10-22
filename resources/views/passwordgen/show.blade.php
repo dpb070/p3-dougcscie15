@@ -23,7 +23,7 @@
   </nav>
   <section id="preamble">
     <header>
-      <h3>Loremipsum Generator</h3>
+      <h3>Password Generator</h3>
     </header>
         More info here
   </section>

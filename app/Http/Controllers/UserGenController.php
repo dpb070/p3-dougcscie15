@@ -2,7 +2,7 @@
 namespace P3\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-class BookController extends Controller
+class UserGenController extends Controller
 {
 
     /**
@@ -11,9 +11,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($title)
+    public function show()
     {  //return 'Show book '.$title;
-        return view('book.show')->with('title', $title);
+        return view('usergen.show');
     }
 
 }

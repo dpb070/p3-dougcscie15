@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', function() {
-    return 'at root...';
-});
+Route::get('/', 'LoremIpsumController@show')->name('loremipsum.show');
 Route::get('loremipsum', 'LoremIpsumController@show')->name('loremipsum.show');
-Route::get('/books/{title}', 'BookController@show')->name('books.show');
+Route::get('usergen', 'UserGenController@show')->name('usergen.show');
+Route::get('passwordgen', 'PasswordGenController@show')->name('passwordgen.show');
