@@ -12,7 +12,7 @@ class LoremIpsumController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show()
-    {  //return 'Show book '.$title;
+    {  
         return view('loremipsum.show');
     }
 

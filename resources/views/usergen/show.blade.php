@@ -16,8 +16,8 @@
   </header>
   <nav>
     <ul>
-      <li><a href="/" id="nav_selected">Lorem Ipsum Generator</a></li>
-      <li><a href="usergen">Random User Generator</a></li>
+      <li><a href="loremipsum">Lorem Ipsum Generator</a></li>
+      <li><a href="usergen" id="nav_selected">Random User Generator</a></li>
       <li><a href="passwordgen">Password Generator</a></li>
     </ul>
   </nav>
