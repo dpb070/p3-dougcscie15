@@ -6,21 +6,43 @@ class LoremIpsumController extends Controller
 {
 
     /**
-    * Display the specified resource.
+    * Doug Bradley
+    * CSCIE-15 Project 3
+    * Index function calls arrive via a GET route and store calls arrive
+    * via POST.  Both functions invoke the same view, loremipsum.index.
     *
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
+
+    private $paragraphLowerLimit = 1;
+    private $paragraphUpperLimit = 10;
+
     public function index()
     {
-        return view('loremipsum.index');
+        $pageVars = [
+            'paragraphLowerLimit' => $this->paragraphLowerLimit,
+            'paragraphUpperLimit' => $this->paragraphUpperLimit,
+        ];
+        return view('loremipsum.index')->with($pageVars);
     }
     public function store(Request $request)
     {
-        $paragraphCount = $request->input('paragraphCount');
-        // return 'Process show: '.$x.'post: '.implode($_POST);
-        return view('loremipsum.store')->with('paragraphCount', $paragraphCount);
-        // return view('loremipsum.show')->with('paragraphCount', $paragraphCount);
+        $pageVars = [
+            'paragraphLowerLimit' => $this->paragraphLowerLimit,
+            'paragraphUpperLimit' => $this->paragraphUpperLimit,
+            'paragraphCount'  => $request->input('paragraphCount'),
+        ];
+        $paragraphRule =
+            'integer|'
+            .'between:'
+                .$pageVars['paragraphLowerLimit'].','
+                .$pageVars['paragraphUpperLimit'];
+        $this->validate($request, [
+            'paragraphCount' => $paragraphRule,
+        ]);
+        $pageVars['loremIpsumText'] = 'results here...';
+        return view('loremipsum.index')->with($pageVars);
     }
 
 

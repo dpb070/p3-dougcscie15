@@ -21,21 +21,43 @@
             <li><a href="passwordgen">Password Generator</a></li>
         </ul>
     </nav>
-    <section class="lh_section">
+    <section id="form_section">
         <header>
-            <h3>Loremipsum Generator (index)</h3>
+            <h3>Lorem Ipsum Generator</h3>
         </header>
+        <p>Enter a number of paragraphs
+            ({{ $paragraphLowerLimit}} - {{ $paragraphUpperLimit}})
+        </p>
         <form method='POST' action='/loremipsum'>
             {{ csrf_field() }}
             <input type='Number of paragraphs:' name='paragraphCount'>
             <input type='submit' value='Submit'>
         </form>
+        <section @if($errors->get('paragraphCount'))
+                        class="error_display"
+                        @else
+                        class="error_hide"
+                        @endif>
+            @if($errors->get('paragraphCount'))
+            <ul>
+                @foreach($errors->get('paragraphCount') as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            @else
+              <ul>
+                  <li>hidden</li>
+              </ul>
+            @endif
+        </section>
     </section>
-    <section class="rh_section">
+    <section id="results_section">
         <header>
-            <h3>Text</h3>
+            <h3>Lorem Ipsum Text</h3>
         </header>
-        Form here
+        [results]
+        {{ $loremIpsumText or ''}}
+        [results]
     </section>
     <footer>
         Doug Bradley
