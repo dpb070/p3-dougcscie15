@@ -20,6 +20,8 @@ class LoremIpsumController extends Controller
 
     public function index()
     {
+        // The validation limits are pushed to the view for informational
+        // display in the page
         $pageVars = [
             'paragraphLowerLimit' => $this->paragraphLowerLimit,
             'paragraphUpperLimit' => $this->paragraphUpperLimit,
