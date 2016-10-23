@@ -37,36 +37,6 @@ nav a:hover {
 	font-weight:bolder;
 	background-color: #00008B;
 }
-.skip_link {
-	color: #DCDCDC;
-	text-decoration: none;
-}
-.skip_link:active, .skip_link:focus {
-	color: #000000;
-	text-decoration: underline;
-}
-aside {
-	font-size: 0.75em;
-	position: fixed;
-	top: 20em;
-	right: 1em;
-	width: 15%;
-	background-color: white;
-	margin: 0.5em;
-	border-radius: 10px;
-	padding: 0.5em;
-}
-aside::after {
-	content: "";
-	background: url(acc2.png);
-	opacity: 0.1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	position: absolute;
-	z-index: -1;
-}
 section article {
 	background-color: white;
 	margin: 0.5em;
@@ -81,49 +51,12 @@ section article {
 	-moz-column-gap: 2em;
 	float: left;
 }
-.article_text {
-	clear: left;
-}
-article header {
-	column-span: all;
-}
-img {
-	float: left;
-}
-.scorebox {
-	font-weight: bold;
-	float: left;
-	border: 2px;
-	border-style: solid;
-	margin: 5px;
-	padding: 5px;
-}
-section table {
-	background-color: white;
-	margin: 0.5em;
-	border-radius: 10px;
-}
 .lh_section {
 	float: left;
 	width: 50%;
 }
 .rh_section {
 	float: left;
-}
-td, th {
-	text-align: left;
-	padding-left: 0.25em;
-	padding-right: 0.25em;
-}
-table caption {
-	padding-bottom: 0.5em;
-}
-#standings_notes {
-	clear:left;
-}
-#standings_notes_header {
-	padding-top: 1em;
-	font-size: 1.25em;
 }
 footer {
 	font-style: italic;

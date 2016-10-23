@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'LoremIpsumController@show')->name('loremipsum.show');
-Route::get('loremipsum', 'LoremIpsumController@show')->name('loremipsum.show');
+Route::get('/', 'LoremIpsumController@index')->name('loremipsum.index');
+Route::get('loremipsum', 'LoremIpsumController@index')->name('loremipsum.index');
+Route::post('loremipsum', 'LoremIpsumController@store')->name('loremipsum.store');
+
+
+
 Route::get('usergen', 'UserGenController@show')->name('usergen.show');
 Route::get('passwordgen', 'PasswordGenController@show')->name('passwordgen.show');
