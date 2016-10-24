@@ -30,26 +30,22 @@
         </p>
         <form method='POST' action='/loremipsum'>
             {{ csrf_field() }}
-            <input type='Number of paragraphs:' name='paragraphCount'>
-            <input type='submit' value='Submit'>
+            <input type="Number of paragraphs:" name="paragraphCount">
+            <input type="submit" value="Submit">
         </form>
-        <section @if($errors->get('paragraphCount'))
+        <div @if($errors->get('paragraphCount'))
                         class="error_display"
                         @else
                         class="error_hide"
                         @endif>
             @if($errors->get('paragraphCount'))
-            <ul>
                 @foreach($errors->get('paragraphCount') as $error)
-                <li>{{ $error }}</li>
+                <p>{{ $error }}</p>
                 @endforeach
-            </ul>
             @else
-              <ul>
-                  <li>hidden</li>
-              </ul>
+                <p>Errors Here</p>
             @endif
-        </section>
+        </div>
     </section>
     <section id="results_section">
         <header>
