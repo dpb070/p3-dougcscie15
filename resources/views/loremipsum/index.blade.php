@@ -55,9 +55,7 @@
         <header>
             <h3>Lorem Ipsum Text</h3>
         </header>
-        [results]
-        {{ $loremIpsumText or ''}}
-        [results]
+        {!! $loremIpsumText or '' !!}
     </section>
     <footer>
         Doug Bradley

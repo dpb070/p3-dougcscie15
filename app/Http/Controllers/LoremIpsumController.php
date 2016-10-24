@@ -2,19 +2,17 @@
 namespace P3\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use joshtronic\LoremIpsum;
 class LoremIpsumController extends Controller
 {
 
     /**
     * Doug Bradley
     * CSCIE-15 Project 3
+    * Lorem Ipsum Section
     * Index function calls arrive via a GET route and store calls arrive
     * via POST.  Both functions invoke the same view, loremipsum.index.
-    *
-    * @param  int  $id
-    * @return \Illuminate\Http\Response
     */
-
     private $paragraphLowerLimit = 1;
     private $paragraphUpperLimit = 10;
 
@@ -43,7 +41,10 @@ class LoremIpsumController extends Controller
         $this->validate($request, [
             'paragraphCount' => $paragraphRule,
         ]);
-        $pageVars['loremIpsumText'] = 'results here...';
+        // generate text, pass to view through page variables
+        $lorIpText = new LoremIpsum();
+        $pageVars['loremIpsumText'] =
+            $lorIpText->paragraphs($pageVars['paragraphCount'], 'p');
         return view('loremipsum.index')->with($pageVars);
     }
 
