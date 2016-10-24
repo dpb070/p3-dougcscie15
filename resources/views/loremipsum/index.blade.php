@@ -30,7 +30,7 @@
         </p>
         <form method='POST' action='/loremipsum'>
             {{ csrf_field() }}
-            <input type="Number of paragraphs:" name="paragraphCount">
+            <input type="text" name="paragraphCount">
             <input type="submit" value="Submit">
         </form>
         <div @if($errors->get('paragraphCount'))
