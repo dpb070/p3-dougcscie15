@@ -5,7 +5,6 @@ use App\Http\Requests;
 use joshtronic\LoremIpsum;
 class LoremIpsumController extends Controller
 {
-
     /**
     * Doug Bradley
     * CSCIE-15 Project 3
@@ -34,17 +33,17 @@ class LoremIpsumController extends Controller
             'paragraphCount'  => $request->input('paragraphCount'),
         ];
         $paragraphRule =
-            'integer|'
-            .'between:'
-                .$pageVars['paragraphLowerLimit'].','
-                .$pageVars['paragraphUpperLimit'];
+        'integer|'
+        .'between:'
+        .$pageVars['paragraphLowerLimit'].','
+        .$pageVars['paragraphUpperLimit'];
         $this->validate($request, [
             'paragraphCount' => $paragraphRule,
-        ]);
+            ]);
         // generate text, pass to view through page variables
         $lorIpText = new LoremIpsum();
         $pageVars['loremIpsumText'] =
-            $lorIpText->paragraphs($pageVars['paragraphCount'], 'p');
+        $lorIpText->paragraphs($pageVars['paragraphCount'], 'p');
         return view('loremipsum.index')->with($pageVars);
     }
 
