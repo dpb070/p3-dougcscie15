@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>
-        @yield('title','?')
-    </title>
-
-    <meta charset='utf-8'>
-    <link href="/css/foobooks.css" type='text/css' rel='stylesheet'>
-
-    {{-- Yield any page specific CSS files or anything else you might want in the <head> --}}
-    @yield('head')
+    <!-- Doug Bradley -->
+    <!-- CSCIE-15  -->
+    <!-- P3 -->
+    <meta charset="UTF-8">
+    <title>CSCIE-15 Project 3</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="css/p3.css" rel="stylesheet">
 
 </head>
 <body>
-
     <header>
+        <h1>Project 3 - Developer's Best Friend</h1>
     </header>
-
-    <section>
-        {{-- Main page content will be yielded here --}}
-        Hello from master.blade.php
-        @yield('content')
-    </section>
-
+    @yield('navbar')
+    @yield('formSection')
+    @yield('resultsSection')
     <footer>
-        &copy; {{ date('Y') }}
+        Doug Bradley
+        CSCIE-15
+        Project 3
+        Due 10/27/2016
     </footer>
-
-
-    {{-- Yield any page specific JS files or anything else you might want at the end of the body --}}
-    @yield('body')
 
 </body>
 </html>

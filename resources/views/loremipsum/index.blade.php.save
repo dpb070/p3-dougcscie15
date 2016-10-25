@@ -1,5 +1,19 @@
-@extends('layouts.master')
-@section('navbar')
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Doug Bradley -->
+    <!-- CSCIE-15  -->
+    <!-- P3 -->
+    <meta charset="UTF-8">
+    <title>CSCIE-15 Project 3</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="css/p3.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Project 3 - Developer's Best Friend</h1>
+    </header>
     <nav>
         <ul>
             <li><a href="loremipsum" id="nav_selected">Lorem Ipsum Generator</a></li>
@@ -7,8 +21,6 @@
             <li><a href="passwordgen">Password Generator</a></li>
         </ul>
     </nav>
-@stop
-@section('formSection')
     <section id="form_section">
         <header>
             <h3>Lorem Ipsum Generator</h3>
@@ -35,12 +47,18 @@
             @endif
         </div>
     </section>
-@stop
-@section('resultsSection')
     <section id="results_section">
         <header>
             <h3>Lorem Ipsum Text</h3>
         </header>
         {!! $loremIpsumText or '' !!}
     </section>
-@stop
+    <footer>
+        Doug Bradley
+        CSCIE-15
+        Project 3
+        Due 10/27/2016
+    </footer>
+
+</body>
+</html>

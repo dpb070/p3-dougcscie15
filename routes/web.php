@@ -17,5 +17,5 @@ Route::post('loremipsum', 'LoremIpsumController@store')->name('loremipsum.store'
 
 
 
-Route::get('usergen', 'UserGenController@show')->name('usergen.show');
+Route::get('usergen', 'UserGenController@index')->name('usergen.index');
 Route::get('passwordgen', 'PasswordGenController@show')->name('passwordgen.show');

@@ -11,9 +11,9 @@ class UserGenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function index()
     {  //return 'Show book '.$title;
-        return view('usergen.show');
+        return view('usergen.index');
     }
 
 }
