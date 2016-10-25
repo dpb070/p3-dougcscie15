@@ -48,6 +48,7 @@
                     <td>{{ $firstName[$i] }}</td>
                     <td>{{ $lastName[$i] }}</td>
                     <td>{{ $dateOfBirth[$i]}}
+                    <td>{{ $profile[$i] }}
                 </tr>
             @endfor
         </table>

@@ -1,7 +1,8 @@
 <?php
 namespace P3\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Http\Requests;
+use App\Http\Requestsuse;
+use joshtronic\LoremIpsum; // used for profile generation
 class UserGenController extends Controller
 {
     /**
@@ -52,13 +53,21 @@ class UserGenController extends Controller
             'userCount' => $userRule,
         ]);
         // generate table array columns, pass to view
-        $pageVars['firstName'] = $fNameArray;
-        $pageVars['lastName'] = $lNameArray;
+        // $pageVars['firstName'] = $fNameArray;
+        // $pageVars['lastName'] = $lNameArray;
         // random date
         for ($i = 0; $i < $pageVars['userCount']; $i++) {
-            $dobArray[$i] = date("d M Y", mt_rand($dobStart, $dobEnd));
+            $pageVars['firstName'][$i] =
+                    $fNameArray[rand(0,$pageVars['userCount']-1)];
+            $pageVars['lastName'][$i] =
+                    $lNameArray[rand(0,$pageVars['userCount']-1)];
+            $pageVars['dateOfBirth'][$i] =
+                    date("d M Y", mt_rand($dobStart, $dobEnd));
+            $profileText = new LoremIpsum();
+            $pageVars['profile'][$i] =
+                        $profileText->sentence();
         }
-        $pageVars['dateOfBirth'] = $dobArray;
+        // $pageVars['dateOfBirth'] = $dobArray;
         return view('usergen.index')->with($pageVars);
     }
 

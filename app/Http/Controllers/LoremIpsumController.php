@@ -2,7 +2,7 @@
 namespace P3\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use joshtronic\LoremIpsum;
+use joshtronic\LoremIpsum; // used for text generation
 class LoremIpsumController extends Controller
 {
     /**
