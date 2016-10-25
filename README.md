@@ -11,4 +11,4 @@
 - Additional Details: none
 - External Code: The lorem ipsum text is generated with Josh Sherman's
   joshtronic/php-loremipsum package.  See https://github.com/joshtronic/php-loremipsum
-  for details
+  for details.  Random date idea from http://thisinterestsme.com/generate-random-date-php/

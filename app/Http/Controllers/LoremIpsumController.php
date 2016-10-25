@@ -43,7 +43,7 @@ class LoremIpsumController extends Controller
         // generate text, pass to view through page variables
         $lorIpText = new LoremIpsum();
         $pageVars['loremIpsumText'] =
-        $lorIpText->paragraphs($pageVars['paragraphCount'], 'p');
+            $lorIpText->paragraphs($pageVars['paragraphCount'], 'p');
         return view('loremipsum.index')->with($pageVars);
     }
 
