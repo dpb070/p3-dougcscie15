@@ -37,12 +37,15 @@ class UserGenController extends Controller
                             "Taylor", "White", "Harris", "Martin",
                             "Lewis","Lee","Walker","Hall"
                         );
+        $nameCount = count($fNameArray);
         $dobStart = strtotime("1980-01-01");
         $dobEnd = strtotime("2000-12-31");
         $pageVars = [
             'userLowerLimit' => $this->userLowerLimit,
             'userUpperLimit' => $this->userUpperLimit,
             'userCount'  => $request->input('userCount'),
+            'dobFlag' => $request->input('dobFlag'),
+            'profileFlag' => $request->input('profileFlag')
         ];
         $userRule =
             'integer|'
@@ -56,13 +59,15 @@ class UserGenController extends Controller
         // $pageVars['firstName'] = $fNameArray;
         // $pageVars['lastName'] = $lNameArray;
         // random date
+        // random lorem ipsum text for profile
+        // assign all values and control display in view
         for ($i = 0; $i < $pageVars['userCount']; $i++) {
             $pageVars['firstName'][$i] =
-                    $fNameArray[rand(0,$pageVars['userCount']-1)];
+                    $fNameArray[rand(0,$nameCount-1)];
             $pageVars['lastName'][$i] =
-                    $lNameArray[rand(0,$pageVars['userCount']-1)];
+                    $lNameArray[rand(0,$nameCount-1)];
             $pageVars['dateOfBirth'][$i] =
-                    date("d M Y", mt_rand($dobStart, $dobEnd));
+                    date("m/d/Y", mt_rand($dobStart, $dobEnd));
             $profileText = new LoremIpsum();
             $pageVars['profile'][$i] =
                         $profileText->sentence();
