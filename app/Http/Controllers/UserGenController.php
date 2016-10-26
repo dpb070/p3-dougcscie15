@@ -10,10 +10,10 @@ class UserGenController extends Controller
     * CSCIE-15 Project 3
     * User Generator Section
     * Index function calls arrive via a GET route and store calls arrive
-    * via POST.  Both functions invoke the same view, loremipsum.index.
+    * via POST.  Both functions invoke the same view, usergen.index.
     */
-    private $userLowerLimit = 1;
-    private $userUpperLimit = 50;
+    private $userLowerLimit = 1;   //minimum users to generate
+    private $userUpperLimit = 50;  //maximum users to generate
 
     public function index()
     {
