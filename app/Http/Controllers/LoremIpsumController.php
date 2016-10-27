@@ -12,8 +12,8 @@ class LoremIpsumController extends Controller
     * Index function calls arrive via a GET route and store calls arrive
     * via POST.  Both functions invoke the same view, loremipsum.index.
     */
-    private $paragraphLowerLimit = 1;
-    private $paragraphUpperLimit = 10;
+    private $paragraphLowerLimit = 1;  //min paragraphs for generation
+    private $paragraphUpperLimit = 10; // max paragraphs for generation
 
     public function index()
     {
@@ -33,10 +33,11 @@ class LoremIpsumController extends Controller
             'paragraphCount'  => $request->input('paragraphCount'),
         ];
         $paragraphRule =
-        'integer|'
+        'required|'
+        .'integer|'
         .'between:'
-        .$pageVars['paragraphLowerLimit'].','
-        .$pageVars['paragraphUpperLimit'];
+            .$pageVars['paragraphLowerLimit'].','
+            .$pageVars['paragraphUpperLimit'];
         $this->validate($request, [
             'paragraphCount' => $paragraphRule,
             ]);

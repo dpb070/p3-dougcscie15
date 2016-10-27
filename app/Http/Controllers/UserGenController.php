@@ -38,7 +38,7 @@ class UserGenController extends Controller
                             "Lewis","Lee","Walker","Hall"
                         );
         $nameCount = count($fNameArray);
-        $dobStart = strtotime("1980-01-01");
+        $dobStart = strtotime("1980-01-01");  //interval for birthday generation
         $dobEnd = strtotime("2000-12-31");
         $pageVars = [
             'userLowerLimit' => $this->userLowerLimit,
@@ -48,7 +48,8 @@ class UserGenController extends Controller
             'profileFlag' => $request->input('profileFlag')
         ];
         $userRule =
-            'integer|'
+            'required|'
+            .'integer|'
             .'between:'
             .$pageVars['userLowerLimit'].','
             .$pageVars['userUpperLimit'];

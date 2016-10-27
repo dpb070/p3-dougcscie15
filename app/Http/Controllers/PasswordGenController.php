@@ -44,7 +44,8 @@ class PasswordGenController extends Controller
         'wordSeparator' => $request->input('wordSeparator')
     ];
     $wordCountRule =
-        'integer|'
+        'required|'
+        .'integer|'
         .'between:'
         .$pageVars['pwMinWords'].','
         .$pageVars['pwMaxWords'];
