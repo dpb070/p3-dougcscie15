@@ -7,8 +7,8 @@
   - a lorem ipsum text generator
   - a user generator
   - a password generator
-- Screencast Demo Link: TBD
+- Screencast Demo Link: http://screencast.com/t/FIOceTLR
 - Additional Details: none
 - External Code: The lorem ipsum text is generated with Josh Sherman's
   joshtronic/php-loremipsum package.  See https://github.com/joshtronic/php-loremipsum
-  for details.  Random date idea from http://thisinterestsme.com/generate-random-date-php/
+  for details.  Th idea for the random date generator is from http://thisinterestsme.com/generate-random-date-php/
